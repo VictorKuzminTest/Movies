@@ -66,17 +66,6 @@ public class DescriptionFragment extends Fragment implements ContractView {
         return view;
     }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case android.R.id.home:
-                getActivity().onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     public void setViews(){
         if(filmsItem != null){
             Glide.with(getContext()).load(filmsItem.getImageUrl()).into(imageViewPoster);
@@ -93,7 +82,6 @@ public class DescriptionFragment extends Fragment implements ContractView {
                     getActivity().onBackPressed();
                 }
             });
-
         }
     }
 

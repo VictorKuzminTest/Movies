@@ -11,8 +11,12 @@
     <color name="colorAccent">#03A9F4</color>
 
     <color name="colorMedGrey">#CBBEB5</color>
+
     <color name="colorBlueLight">#D6E4Fd</color>
+
     <color name="colorMedGreen">#2AC940</color>
+
     <color name="colorBrownLight">#FAEBD7</color>
+
     <color name="colorRedLight">#EC2F5E</color>
 </resources>

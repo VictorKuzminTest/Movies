@@ -25,7 +25,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Локализованное имя Локализованное имя Локализованное имя"
             style="@style/greyBold20"
             app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +37,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="Rating"
             style="@style/greenBold20"
             app:layout_constraintStart_toStartOf="@+id/guideline_vertical"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +58,6 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             style="@style/grey13"
-            android:text="name name name name name name name name name"
             app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_localized_name" />

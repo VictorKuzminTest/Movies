@@ -1,5 +1,6 @@
 package com.example.victor.movies.views;
 
+import android.app.ProgressDialog;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
@@ -20,11 +21,15 @@ public class MainActivity extends AppCompatActivity implements ContractView {
     private Presenter presenter;
     private Fragment moviesFragment;
     private Fragment descriptionFragment;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
 
         presenter = new MainPresenter(this);
 
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements ContractView {
             fragmentTransaction.add(R.id.fragmentContainer, moviesFragment);
             fragmentTransaction.commit();
         }
+        showProgress("Загрузка...");
     }
 
     @Override
@@ -46,14 +52,16 @@ public class MainActivity extends AppCompatActivity implements ContractView {
 
     @Override
     public void displayMovies(Response movieResponse) {
-        ((ContractView)moviesFragment).displayMovies(movieResponse);
+        if(movieResponse != null) {
+            ((ContractView) moviesFragment).displayMovies(movieResponse);
+            dismissProgress();
+        }
     }
 
     @Override
     public void displayError(String e) {
-        showToast(e);
+        presenter.getMovies();
     }
-
 
     @Override
     public void showFragment(int id, FilmsItem item) {
@@ -79,5 +87,14 @@ public class MainActivity extends AppCompatActivity implements ContractView {
         fragmentTransaction.replace(R.id.fragmentContainer, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    private void showProgress(String message) {
+        progressDialog.show();
+        progressDialog.setMessage(message);
+    }
+
+    public void dismissProgress() {
+        progressDialog.dismiss();
     }
 }

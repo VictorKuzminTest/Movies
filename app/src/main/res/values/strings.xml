@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Movies</string>
+
+    <string name="title_movies">Фильмы</string>
+
+    <string name="title_year">Год: </string>
+
+    <string name="title_rating">Рейтинг: </string>
 </resources>

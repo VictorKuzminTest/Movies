@@ -58,7 +58,6 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 style="@style/grey15"
-                android:text="name name name name name name name name name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline_vertical"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -70,7 +69,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Год: "
+                android:text="@string/title_year"
                 style="@style/greyBold20"
                 app:layout_constraintStart_toStartOf="@+id/guideline_vertical"
                 app:layout_constraintTop_toBottomOf="@+id/textView_name" />
@@ -81,7 +80,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:text="1994"
                 style="@style/greyBold20"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView_year_title"
                 app:layout_constraintStart_toEndOf="@+id/textView_year_title" />
@@ -93,7 +91,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Рейтинг: "
+                android:text="@string/title_rating"
                 style="@style/greyBold20"
                 app:layout_constraintStart_toStartOf="@+id/guideline_vertical"
                 app:layout_constraintTop_toBottomOf="@+id/textView_year_title" />
@@ -104,23 +102,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:text="9.196"
                 style="@style/greenBold20"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView_rating_title"
                 app:layout_constraintStart_toEndOf="@+id/textView_rating_title" />
 
             <TextView
                 android:id="@+id/textView_description"
+                style="@style/grey20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="104dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                style="@style/grey20"
-                android:text="Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 

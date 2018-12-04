@@ -23,8 +23,6 @@ import butterknife.Unbinder;
 
 public class MoviesFragment extends Fragment implements ContractView{
 
-    private String TAG = "MoviesFragment";
-
     private static Presenter presenter;
     private Unbinder unbinder;
     RecyclerView.Adapter adapter;
@@ -40,14 +38,6 @@ public class MoviesFragment extends Fragment implements ContractView{
         return moviesFragment;
     }
 
-    /**
-     * When creating view we ask for movies from server. If the device has no internet connection,
-     * activity only shows "error" message. In this app we don't listen and handle for internet connection.
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return
-     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -59,7 +49,13 @@ public class MoviesFragment extends Fragment implements ContractView{
 
         recyclerViewMovies.setHasFixedSize(true);
         setRecyclerView();
-        presenter.getMovies();
+
+        if(adapter == null){
+            presenter.getMovies();
+        }
+        else{
+            recyclerViewMovies.setAdapter(adapter);
+        }
 
         return view;
     }
@@ -71,12 +67,8 @@ public class MoviesFragment extends Fragment implements ContractView{
 
     @Override
     public void displayMovies(Response response) {
-        if(response != null) {
-            adapter = new MoviesAdapter(presenter, response.getFilms(), getContext());
-            recyclerViewMovies.setAdapter(adapter);
-        }else {
-            Log.d(TAG,"Movies response null");
-        }
+        adapter = new MoviesAdapter(presenter, response.getFilms(), getContext());
+        recyclerViewMovies.setAdapter(adapter);
     }
 
     @Override
